@@ -1,4 +1,4 @@
-package com.microservice.forexservice.service;
+package com.microservice.forexservice.interfaces;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
