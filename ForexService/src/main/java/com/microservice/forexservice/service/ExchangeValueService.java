@@ -10,9 +10,9 @@ public class ExchangeValueService {
 	@Autowired
 	ExchangeValueRepoInterface exchangeValueRepoInterface;
 	
-	public void retrieveExchangeValue(String from, String to) {
+	public ExchangeValue retrieveExchangeValue(String from, String to) {
 		
-		ExchangeValue exchangeValue = exchangeValueRepoInterface.findByFromAndTo(from, to);
+		return exchangeValueRepoInterface.findByFromAndTo(from, to);
 		
 	}
 
