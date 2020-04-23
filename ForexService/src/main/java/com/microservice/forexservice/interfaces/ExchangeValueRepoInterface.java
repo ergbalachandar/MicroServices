@@ -4,11 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.microservice.forexservice.entity.ExchangeValue;
 
-public class ExchangeValueRepoInterface {
+public interface ExchangeValueRepoInterface extends JpaRepository<ExchangeValue, Long> {
 
-	public interface ExchangeValueRepository extends JpaRepository<ExchangeValue, Long> {
-		
-		ExchangeValue findByFromAndTo(String from, String to);
+	ExchangeValue findByFromAndTo(String from, String to);
 
-	}
 }
