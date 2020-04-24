@@ -7,10 +7,12 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.microservice.currencyexchangeservice.currencyconversionresponsedto.CurrencyConversionResponseDto;
 
+@RestController
 public class CurrencyExchangeServiceController {
 
 	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
@@ -26,6 +28,8 @@ public class CurrencyExchangeServiceController {
 				uriVariables);
 
 		CurrencyConversionResponseDto response = responseEntity.getBody();
+		response.setQuantity(quantity);
+		response.setTotalCalculatedAmount(quantity.multiply(response.getConversionMultiple()));
 
 		return response;
 	}
