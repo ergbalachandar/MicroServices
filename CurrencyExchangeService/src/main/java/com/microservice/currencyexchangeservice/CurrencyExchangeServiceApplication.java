@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("com.microservice.currencyexchangeservice")
+@EnableFeignClients("com.microservice.currencyexchangeservice.interfaces")
 @EnableDiscoveryClient
 public class CurrencyExchangeServiceApplication {
 
